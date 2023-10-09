@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:movieticket/effects/glitch.dart';
 import 'package:movieticket/model/SearchModel.dart';
+import 'package:movieticket/widgets/carousel_sliderCard.dart';
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -118,7 +119,7 @@ class _HomeState extends State<Home> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-
+                  CarouselCard(imgname:"jawan.jpg",moviename:"Jawan" ,no_star:"8/10",)
                 ],
               ),
             ),
