@@ -32,18 +32,86 @@ class _HomeState extends State<Home> {
           //IconButton
         ], //<Widget>[]
         elevation: 50.0,
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          tooltip: 'Menu Icon',
-          onPressed: () {},
-        ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
+          drawer: Drawer(
+            child: ListView(
+              padding: EdgeInsets.all(0),
+              children: [
+                DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                  ), //BoxDecoration
+                  child: UserAccountsDrawerHeader(
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                    ),
+                    accountName: Text(
+                      "HARSH GUPTA",
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    accountEmail: Text("iharshgupta.2003@gmail.com"),
+                    currentAccountPictureSize: Size.square(50),
+                    currentAccountPicture: CircleAvatar(
+                      backgroundColor: Colors.white.withOpacity(.6),
+                      child: Text(
+                        "H",
+                        style: TextStyle(fontSize: 30.0, color: Colors.black),
+                      ), //Text
+                    ), //circleAvatar
+                  ), //UserAccountDrawerHeader
+                ),
+                ListTile(
+                  leading: Icon(Icons.video_label),
+                  title: Text(' Saved Blogs '),
+                  onTap: () {
+                  //   Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //           builder: (context) =>
+                  //               Liked()));
+                   },
+                ),//DrawerHeader
+                ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text(' My Profile '),
+                  onTap: () {
+                  //   Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //           builder: (context) =>
+                  //               Profile()));
+                  },
+                ),
+                ListTile(
+                  leading: Icon(Icons.workspace_premium),
+                  title: Text(' Go Premium '),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                ListTile(
+                  leading: Icon(Icons.edit),
+                  title: Text(' Edit Profile '),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                ListTile(
+                  leading: Icon(Icons.logout),
+                  title: Text('LogOut'),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ],
+            ),
+          ),
           body:Container(
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  
+
                 ],
               ),
             ),
