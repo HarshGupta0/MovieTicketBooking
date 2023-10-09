@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:movieticket/effects/glitch.dart';
+import 'package:movieticket/model/SearchModel.dart';
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -21,8 +22,14 @@ class _HomeState extends State<Home> {
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.search,size: 25,),
-            tooltip: 'Setting Icon',
-            onPressed: () {},
+            tooltip: 'Search Icon',
+            onPressed: () {
+              showSearch(
+                  context: context,
+                  // delegate to customize the search bar
+                  delegate: CustomSearchDelegate()
+              );
+            },
           ),
           IconButton(
             icon: const Icon(Icons.message),
