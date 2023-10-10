@@ -20,9 +20,6 @@ class CustomSearchDelegate extends SearchDelegate {
     "The Kashmir Files",
 
   ];
-
-// first overwrite to
-// clear the search text
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [

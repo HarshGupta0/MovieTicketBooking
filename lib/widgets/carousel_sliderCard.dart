@@ -5,12 +5,14 @@ class CarouselCard extends StatelessWidget {
   String? moviename;
   String? no_star;
   String? Location;
+  String? year;
   CarouselCard(
       {Key? key,
       required this.imgname,
       required this.moviename,
         required this.no_star,
       required this.Location,
+       required this.year,
       })
       : super(key: key);
 
@@ -70,11 +72,19 @@ class CarouselCard extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    '$moviename',
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold,fontSize: 18),
-                  ),
+                  Row(children: [
+                    Text(
+                      '$moviename',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold,fontSize: 18),
+                    ),
+                    SizedBox(width: 6,),
+                    Text(
+                      '$year',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold,fontSize: 14),
+                    ),
+                  ],),
                   Row(children: [
                     Icon(
                       Icons.star,
