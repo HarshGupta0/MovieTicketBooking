@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:movieticket/effects/glitch.dart';
@@ -119,7 +120,32 @@ class _HomeState extends State<Home> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  CarouselCard(imgname:"jawan.jpg",moviename:"Jawan" ,no_star:"8/10",)
+                  TextField(),
+                  CarouselSlider(
+                    items: [
+                      //1st Image of Slider
+                      CarouselCard(imgname:"jawan.jpg", moviename: "Jawan", no_star:"8/10", Location:"Ghaziabad"),
+                      CarouselCard(imgname:"jawan.jpg", moviename: "Jawan", no_star:"8/10", Location:"Ghaziabad"),
+                      CarouselCard(imgname:"jawan.jpg", moviename: "Jawan", no_star:"8/10", Location:"Ghaziabad"),
+                      CarouselCard(imgname:"jawan.jpg", moviename: "Jawan", no_star:"8/10", Location:"Ghaziabad"),
+                      CarouselCard(imgname:"jawan.jpg", moviename: "Jawan", no_star:"8/10", Location:"Ghaziabad"),
+                      CarouselCard(imgname:"jawan.jpg", moviename: "Jawan", no_star:"8/10", Location:"Ghaziabad"),
+
+                      //2nd Image of Slider
+                    ],
+
+                    //Slider Container properties
+                    options: CarouselOptions(
+                      height: 280,
+                      enlargeCenterPage: true,
+                      autoPlay: true,
+                      aspectRatio: 15/ 20,
+                      autoPlayCurve: Curves.fastOutSlowIn,
+                      enableInfiniteScroll: true,
+                      autoPlayAnimationDuration: Duration(milliseconds: 200),
+                      viewportFraction: 0.6,
+                    ),
+                  ),
                 ],
               ),
             ),
