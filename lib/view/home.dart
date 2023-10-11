@@ -141,7 +141,9 @@ class _HomeState extends State<Home> {
                       TextButton(onPressed: (){}, child:Text("See More",style: TextStyle(color: Colors.grey,fontSize: 16,fontWeight: FontWeight.bold),))
                     ],),),
                 SizedBox(height: 10,),
-
+               HomeCard(imgname: "Images/jawan.jpg", name:"Jawan", description:"Drama.Action", star:"7/10", date:"12-9-23"),
+                SizedBox(height: 10,),
+                HomeCard(imgname: "Images/jawan.jpg", name:"Jawan", description:"Drama.Action", star:"7/10", date:"12-9-23"),
               ],
             ),
           ),
