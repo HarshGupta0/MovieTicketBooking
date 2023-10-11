@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:movieticket/effects/glitch.dart';
 import 'package:movieticket/model/SearchModel.dart';
+import 'package:movieticket/widgets/MainCard.dart';
 import 'package:movieticket/widgets/SearchField.dart';
 import 'package:movieticket/widgets/carousel_sliderCard.dart';
 import 'package:movieticket/widgets/drawer.dart';
@@ -25,6 +26,11 @@ class _HomeState extends State<Home> {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [Colors.green.shade600,Colors.black26])),
+      //     decoration: BoxDecoration(
+      //         gradient: LinearGradient(
+      //             // begin: Alignment.topLeft,
+      //             // end: Alignment.bottomRight,
+      //             colors: [Color(0xff0e1c26),Color(0xff2a454b),Color(0xff294861)])),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar:AppBar(
@@ -125,6 +131,16 @@ class _HomeState extends State<Home> {
 
                   ),
                 ),
+                SizedBox(height: 10,),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 6),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Popular",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 25),),
+                      TextButton(onPressed: (){}, child:Text("See More",style: TextStyle(color: Colors.grey,fontSize: 16,fontWeight: FontWeight.bold),))
+                    ],),),
+                SizedBox(height: 10,),
 
               ],
             ),
