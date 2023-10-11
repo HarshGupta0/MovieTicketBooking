@@ -5,6 +5,7 @@ import 'package:movieticket/effects/glitch.dart';
 import 'package:movieticket/model/SearchModel.dart';
 import 'package:movieticket/widgets/SearchField.dart';
 import 'package:movieticket/widgets/carousel_sliderCard.dart';
+import 'package:movieticket/widgets/drawer.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -26,7 +27,8 @@ class _HomeState extends State<Home> {
               colors: [Colors.green.shade600,Colors.black26])),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(
+        appBar:AppBar(
+          backgroundColor: Colors.black.withOpacity(.8),
           title: GlithEffect(
             child: Text("Now Showing"),
           ),
@@ -54,84 +56,22 @@ class _HomeState extends State<Home> {
           elevation: 50.0,
           systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
-        drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.all(0),
-            children: [
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                ), //BoxDecoration
-                child: UserAccountsDrawerHeader(
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                  ),
-                  accountName: Text(
-                    "HARSH GUPTA",
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  accountEmail: Text("iharshgupta.2003@gmail.com"),
-                  currentAccountPictureSize: Size.square(50),
-                  currentAccountPicture: CircleAvatar(
-                    backgroundColor: Colors.white.withOpacity(.6),
-                    child: Text(
-                      "H",
-                      style: TextStyle(fontSize: 30.0, color: Colors.black),
-                    ), //Text
-                  ), //circleAvatar
-                ), //UserAccountDrawerHeader
-              ),
-              ListTile(
-                leading: Icon(Icons.video_label),
-                title: Text(' Saved Blogs '),
-                onTap: () {
-                  //   Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //           builder: (context) =>
-                  //               Liked()));
-                },
-              ), //DrawerHeader
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text(' My Profile '),
-                onTap: () {
-                  //   Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //           builder: (context) =>
-                  //               Profile()));
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.workspace_premium),
-                title: Text(' Go Premium '),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.edit),
-                title: Text(' Edit Profile '),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.logout),
-                title: Text('LogOut'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ],
-          ),
-        ),
+        drawer:drawer(),
         body: Container(
           child: SingleChildScrollView(
             child: Column(
               children: [
                 InputText(MylableText: "Find Movie"),
+                SizedBox(height: 10,),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 6),
+                  child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("New Movies",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 25),),
+                    TextButton(onPressed: (){}, child:Text("See More",style: TextStyle(color: Colors.grey,fontSize: 16,fontWeight: FontWeight.bold),))
+                  ],),),
+                SizedBox(height: 10,),
                 CarouselSlider(
                   items: [
                     //1st Image of Slider
@@ -177,15 +117,15 @@ class _HomeState extends State<Home> {
                   //Slider Container properties
                   options: CarouselOptions(
                     height: 280,
-                    enlargeCenterPage: true,
                     autoPlay: true,
                     aspectRatio: 15 / 20,
-                    autoPlayCurve: Curves.fastOutSlowIn,
+                    autoPlayCurve: Curves.fastEaseInToSlowEaseOut,
                     enableInfiniteScroll: true,
                     autoPlayAnimationDuration: Duration(milliseconds: 200),
-                    viewportFraction: 0.6,
+
                   ),
                 ),
+
               ],
             ),
           ),

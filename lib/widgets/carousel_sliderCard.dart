@@ -65,6 +65,7 @@ class CarouselCard extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
                 ),
                 color: Colors.black.withOpacity(.5),
               ),
