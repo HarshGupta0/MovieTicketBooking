@@ -25,15 +25,10 @@ class _HomeState extends State<Home> {
           gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [Colors.green.shade600,Colors.black26])),
-      //     decoration: BoxDecoration(
-      //         gradient: LinearGradient(
-      //             // begin: Alignment.topLeft,
-      //             // end: Alignment.bottomRight,
-      //             colors: [Color(0xff0e1c26),Color(0xff2a454b),Color(0xff294861)])),
+              colors: [Colors.green.shade600, Colors.black26])),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar:AppBar(
+        appBar: AppBar(
           backgroundColor: Colors.black.withOpacity(.8),
           title: GlithEffect(
             child: Text("Now Showing"),
@@ -62,22 +57,43 @@ class _HomeState extends State<Home> {
           elevation: 50.0,
           systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
-        drawer:drawer(),
+        drawer: drawer(),
         body: Container(
           child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
             child: Column(
               children: [
                 InputText(MylableText: "Find Movie"),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ), //
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 6),
                   child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("New Movies",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 25),),
-                    TextButton(onPressed: (){}, child:Text("See More",style: TextStyle(color: Colors.grey,fontSize: 16,fontWeight: FontWeight.bold),))
-                  ],),),
-                SizedBox(height: 10,),
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "New Movies",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 25),
+                      ),
+                      TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "See More",
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold),
+                          ))
+                    ],
+                  ),
+                ), //heading
+                SizedBox(
+                  height: 10,
+                ),
                 CarouselSlider(
                   items: [
                     //1st Image of Slider
@@ -128,22 +144,166 @@ class _HomeState extends State<Home> {
                     autoPlayCurve: Curves.fastEaseInToSlowEaseOut,
                     enableInfiniteScroll: true,
                     autoPlayAnimationDuration: Duration(milliseconds: 200),
-
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 6),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Popular",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 25),),
-                      TextButton(onPressed: (){}, child:Text("See More",style: TextStyle(color: Colors.grey,fontSize: 16,fontWeight: FontWeight.bold),))
-                    ],),),
-                SizedBox(height: 10,),
-               HomeCard(imgname: "Images/jawan.jpg", name:"Jawan", description:"Drama.Action", star:"7/10", date:"12-9-23"),
-                SizedBox(height: 10,),
-                HomeCard(imgname: "Images/jawan.jpg", name:"Jawan", description:"Drama.Action", star:"7/10", date:"12-9-23"),
+                      Text(
+                        "Popular",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 25),
+                      ),
+                      TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "See More",
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold),
+                          ))
+                    ],
+                  ),
+                ),
+                Container(
+                    margin: EdgeInsets.all(7),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 247,
+                            child: HomeCard(
+                                imgname: "images/jawan.jpg",
+                                name: "Jawan",
+                                description: "Drama.Action",
+                                star: "7/10",
+                                date: "12-9-23"),
+                          ),
+                          Container(
+                            width: 247,
+                            child: HomeCard(
+                                imgname: "images/jawan.jpg",
+                                name: "Jawan",
+                                description: "Drama.Action",
+                                star: "7/10",
+                                date: "12-9-23"),
+                          ),
+                          Container(
+                            width: 247,
+                            child: HomeCard(
+                                imgname: "images/jawan.jpg",
+                                name: "Jawan",
+                                description: "Drama.Action",
+                                star: "7/10",
+                                date: "12-9-23"),
+                          ),
+                          Container(
+                            width: 247,
+                            child: HomeCard(
+                                imgname: "images/jawan.jpg",
+                                name: "Jawan",
+                                description: "Drama.Action",
+                                star: "7/10",
+                                date: "12-9-23"),
+                          ),
+                        ],
+                      ),
+                    )), //////////
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 6),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Popular",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 25),
+                      ),
+                      TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "See More",
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold),
+                          ))
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 247,
+                          child: CarouselCard(
+                            imgname: "jawan.jpg",
+                            moviename: "Jawan",
+                            no_star: "8/10",
+                            Location: "Ghaziabad",
+                            year: "(2023)",
+                          ),
+                        ),
+                        Container(
+                          width: 247,
+                          child: CarouselCard(
+                            imgname: "jawan.jpg",
+                            moviename: "Jawan",
+                            no_star: "8/10",
+                            Location: "Ghaziabad",
+                            year: "(2023)",
+                          ),
+                        ),
+                        Container(
+                          width: 247,
+                          child: CarouselCard(
+                            imgname: "jawan.jpg",
+                            moviename: "Jawan",
+                            no_star: "8/10",
+                            Location: "Ghaziabad",
+                            year: "(2023)",
+                          ),
+                        ),
+                        Container(
+                          width: 247,
+                          child: CarouselCard(
+                            imgname: "jawan.jpg",
+                            moviename: "Jawan",
+                            no_star: "8/10",
+                            Location: "Ghaziabad",
+                            year: "(2023)",
+                          ),
+                        ),
+                        Container(
+                          width: 247,
+                          child: CarouselCard(
+                            imgname: "jawan.jpg",
+                            moviename: "Jawan",
+                            no_star: "8/10",
+                            Location: "Ghaziabad",
+                            year: "(2023)",
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
           ),

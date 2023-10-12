@@ -42,14 +42,16 @@ class HomeCardState extends State<HomeCard> {
           child: Row(
             children: [
               Expanded(
-                flex: 1,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
+
+                child: Container(
+                  height: MediaQuery.of(context).size.height / 4,
+                  child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
                   child: Image.asset(
                     widget.imgname, // Provide a valid image asset path
                     fit: BoxFit.fitHeight,
                   ),
-                ),
+                ),)
               ),
               Expanded(
                 child: Container(
