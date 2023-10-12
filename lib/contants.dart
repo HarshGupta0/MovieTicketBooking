@@ -19,10 +19,3 @@ getRandomColor() => [
 // colors: [Colors.purple, Colors.orange]
 // )
 // ),
-List widgetlist= [
-  Home(),
-  Cinemas(),
-  ComingSoon(),
-  more(),
-
-];

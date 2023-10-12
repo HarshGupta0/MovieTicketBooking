@@ -1,52 +1,45 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
-import 'package:movieticket/contants.dart';
-class navBar extends StatefulWidget {
-  const navBar({super.key});
+import 'package:get/get.dart';
+import 'package:movieticket/view/Cinemas.dart';
+import 'package:movieticket/view/coming_soon.dart';
+import 'package:movieticket/view/home.dart';
+import 'package:movieticket/view/more.dart';
 
-  @override
-  State<navBar> createState() => _navBarState();
-}
+class NavigationMenu extends StatelessWidget {
+  const NavigationMenu({super.key});
 
-class _navBarState extends State<navBar> {
   @override
   Widget build(BuildContext context) {
-    int myIndex=0;
+    final controller = Get.put(NavigationController());
     return Scaffold(
-        body: Center(child: widgetlist[myIndex],),
-        bottomNavigationBar: BottomNavigationBar(
-            selectedFontSize: 18,
-            unselectedFontSize: 12,
-            onTap: (index){
-              setState(() {
-                myIndex=index;
-                widgetlist[myIndex];
-              });
-            },
-            currentIndex: myIndex,
-            fixedColor: Colors.red,
-            items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home_rounded,color: Colors.grey,),
-                label: 'Home',
-                activeIcon: Icon(Icons.home_work,color: Colors.red,),
-                // label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.checklist_outlined, color: Colors.grey,),
-                activeIcon: Icon(Icons.check_box, color: Colors.red,),
-                label: 'Bookings',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.live_help, color: Colors.grey,),
-                activeIcon: Icon(Icons.message_rounded, color: Colors.red,),
-                label: 'Help',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle_rounded, color: Colors.grey,),
-                activeIcon: Icon(Icons.account_circle_rounded, color: Colors.red,),
-                label: 'My Account',
-              ),
-            ]),
-      );
+      bottomNavigationBar: Obx(
+        () => NavigationBar(
+            height: 60,
+            elevation: 20,
+            selectedIndex: controller.selectIndex.value,
+            onDestinationSelected: (index)=>controller.selectIndex.value=index,
+
+            destinations: [
+          NavigationDestination(icon: Icon(Icons.home), label: 'home'),
+          NavigationDestination(
+              icon: Icon(Icons.movie_filter_outlined), label: 'Cinemas'),
+          NavigationDestination(icon: Icon(Icons.upcoming), label: 'More'),
+          NavigationDestination(icon: Icon(Icons.favorite), label: 'Favorite'),
+        ]),
+      ),
+      body: Obx(() => controller.screens[controller.selectIndex.value]),
+    );
   }
+}
+
+class NavigationController extends GetxController {
+  final Rx<int> selectIndex = 0.obs;
+  final screens = [
+    Home(),
+    Cinemas(),
+    ComingSoon(),
+    more(),
+  ];
 }
