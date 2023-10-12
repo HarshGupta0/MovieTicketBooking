@@ -34,8 +34,8 @@ class HomeCardState extends State<HomeCard> {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                Color.fromRGBO(121, 172, 120, .4),
-                Color.fromRGBO(97, 130, 100, .4),
+                Color.fromRGBO(121, 172, 120, .6),
+                Color.fromRGBO(97, 130, 100, .6),
               ],
             ),
           ),

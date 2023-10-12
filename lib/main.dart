@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:movieticket/effects/SplashScreen.dart';
-import 'package:movieticket/view/home.dart';
 import 'package:movieticket/view/nav.dart';
 
 void main() {
@@ -33,7 +32,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:showingSplash ? SplashScreen() :navBar(),
+      home:showingSplash ? SplashScreen() :NavigationMenu(),
     );
   }
 }

@@ -13,24 +13,40 @@ class NavigationMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
-    return Scaffold(
+    return SafeArea(child:Container(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.green.shade600, Colors.black,Colors.green.shade600])),
+      child:  Scaffold(
       bottomNavigationBar: Obx(
-        () => NavigationBar(
+            () => NavigationBar(
+                indicatorColor: Colors.green.shade400,
+                surfaceTintColor: Colors.cyan,
+                backgroundColor: Color(0xff618264).withOpacity(.9),
+            // animationDuration
+                // : Duration(milliseconds: 900),
+                labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
             height: 60,
-            elevation: 20,
+            elevation: 0,
             selectedIndex: controller.selectIndex.value,
             onDestinationSelected: (index)=>controller.selectIndex.value=index,
-
             destinations: [
-          NavigationDestination(icon: Icon(Icons.home), label: 'home'),
-          NavigationDestination(
-              icon: Icon(Icons.movie_filter_outlined), label: 'Cinemas'),
-          NavigationDestination(icon: Icon(Icons.upcoming), label: 'More'),
-          NavigationDestination(icon: Icon(Icons.favorite), label: 'Favorite'),
-        ]),
+              NavigationDestination(
+                icon: Icon(Icons.home,color: Colors.white),
+                label: 'Home',
+                selectedIcon:Icon(Icons.home,color: Colors.white,size: 30,),
+
+              ),
+              NavigationDestination(icon: Icon(Icons.movie_filter_outlined,color: Colors.white,), label: 'Cinemas'),
+              NavigationDestination(icon: Icon(Icons.upcoming,color: Colors.white,), label: 'More'),
+              NavigationDestination(icon: Icon(Icons.favorite,color: Colors.white,), label: 'Favorite'),
+            ],
+            ),
       ),
       body: Obx(() => controller.screens[controller.selectIndex.value]),
-    );
+    ),));
   }
 }
 

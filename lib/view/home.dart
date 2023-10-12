@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          backgroundColor: Colors.black.withOpacity(.8),
+          backgroundColor: Color(0xff618264).withOpacity(.9),
           title: GlithEffect(
             child: Text("Now Showing"),
           ),
