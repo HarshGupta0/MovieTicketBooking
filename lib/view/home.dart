@@ -84,7 +84,7 @@ class _HomeState extends State<Home> {
                           child: Text(
                             "See More",
                             style: TextStyle(
-                                color: Colors.grey,
+                                color: Colors.white,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold),
                           ))
@@ -97,41 +97,14 @@ class _HomeState extends State<Home> {
                 CarouselSlider(
                   items: [
                     //1st Image of Slider
-                    CarouselCard(
-                      imgname: "jawan.jpg",
-                      moviename: "Jawan",
-                      no_star: "8/10",
-                      Location: "Ghaziabad",
-                      year: " (2023)",
-                    ),
-                    CarouselCard(
-                      imgname: "jawan.jpg",
-                      moviename: "Jawan",
-                      no_star: "8/10",
-                      Location: "Ghaziabad",
-                      year: "(2023)",
-                    ),
-                    CarouselCard(
-                      imgname: "jawan.jpg",
-                      moviename: "Jawan",
-                      no_star: "8/10",
-                      Location: "Ghaziabad",
-                      year: "(2023)",
-                    ),
-                    CarouselCard(
-                      imgname: "jawan.jpg",
-                      moviename: "Jawan",
-                      no_star: "8/10",
-                      Location: "Ghaziabad",
-                      year: "(2023)",
-                    ),
-                    CarouselCard(
-                      imgname: "jawan.jpg",
-                      moviename: "Jawan",
-                      no_star: "8/10",
-                      Location: "Ghaziabad",
-                      year: "(2023)",
-                    ),
+                    // CarouselCard(
+                    //   imgname: "images/jawan.jpg",
+                    //   moviename: "Jawan",
+                    //   no_star: "8/10",
+                    //   Location: "Ghaziabad",
+                    //   year: " (2023)",
+                    // ),
+                    CarouselCard(imgname:"jawan", moviename: "images/jawan.jpg", no_star:"8/10", description:"Action. Drama", year: "2023", date: "10/9")
 
                     //2nd Image of Slider
                   ],
@@ -166,7 +139,7 @@ class _HomeState extends State<Home> {
                           child: Text(
                             "See More",
                             style: TextStyle(
-                                color: Colors.grey,
+                                color: Colors.white,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold),
                           ))
@@ -182,9 +155,27 @@ class _HomeState extends State<Home> {
                           Container(
                             width: 247,
                             child: HomeCard(
-                                imgname: "images/jawan.jpg",
-                                name: "Jawan",
+                                imgname: "images/tiger3.jpg",
+                                name: "Tiger 3",
                                 description: "Drama.Action",
+                                star: "7/10",
+                                date: "12-9-23"),
+                          ),
+                          Container(
+                            width: 247,
+                            child: HomeCard(
+                                imgname: "images/adipurush.jpg",
+                                name: "Adipurush",
+                                description: "Drama . Action . History",
+                                star: "5/10",
+                                date: "12-9-23"),
+                          ),
+                          Container(
+                            width: 247,
+                            child: HomeCard(
+                                imgname: "images/omg2.jpg",
+                                name: "OMG 2",
+                                description: "Drama. Education",
                                 star: "7/10",
                                 date: "12-9-23"),
                           ),
@@ -200,19 +191,10 @@ class _HomeState extends State<Home> {
                           Container(
                             width: 247,
                             child: HomeCard(
-                                imgname: "images/jawan.jpg",
-                                name: "Jawan",
+                                imgname: "images/uturn.jpg",
+                                name: "Uturn",
                                 description: "Drama.Action",
-                                star: "7/10",
-                                date: "12-9-23"),
-                          ),
-                          Container(
-                            width: 247,
-                            child: HomeCard(
-                                imgname: "images/jawan.jpg",
-                                name: "Jawan",
-                                description: "Drama.Action",
-                                star: "7/10",
+                                star: "6.5/10",
                                 date: "12-9-23"),
                           ),
                         ],
@@ -224,7 +206,7 @@ class _HomeState extends State<Home> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Popular",
+                        "Recently added",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -235,7 +217,7 @@ class _HomeState extends State<Home> {
                           child: Text(
                             "See More",
                             style: TextStyle(
-                                color: Colors.grey,
+                                color: Colors.white,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold),
                           ))
@@ -246,64 +228,187 @@ class _HomeState extends State<Home> {
                   height: 10,
                 ),
                 Container(
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 247,
-                          child: CarouselCard(
-                            imgname: "jawan.jpg",
-                            moviename: "Jawan",
-                            no_star: "8/10",
-                            Location: "Ghaziabad",
-                            year: "(2023)",
+                    margin: EdgeInsets.all(7),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 247,
+                            child: HomeCard(
+                                imgname: "images/ib71.jpg",
+                                name: "IB 71",
+                                description: "Drama.Action",
+                                star: "7.5/10",
+                                date: "12-9-23"),
                           ),
-                        ),
-                        Container(
-                          width: 247,
-                          child: CarouselCard(
-                            imgname: "jawan.jpg",
-                            moviename: "Jawan",
-                            no_star: "8/10",
-                            Location: "Ghaziabad",
-                            year: "(2023)",
+                          Container(
+                            width: 247,
+                            child: HomeCard(
+                                imgname: "images/bloodyDaddy.jpg",
+                                name: "bloody Daddy",
+                                description: "Drama . Action . History",
+                                star: "6/10",
+                                date: "12-9-23"),
                           ),
-                        ),
-                        Container(
-                          width: 247,
-                          child: CarouselCard(
-                            imgname: "jawan.jpg",
-                            moviename: "Jawan",
-                            no_star: "8/10",
-                            Location: "Ghaziabad",
-                            year: "(2023)",
+                          Container(
+                            width: 247,
+                            child: HomeCard(
+                                imgname: "images/gumraah.jpg",
+                                name: "Gumraah",
+                                description: "Drama. Education",
+                                star: "6.5/10",
+                                date: "12-9-23"),
                           ),
-                        ),
-                        Container(
-                          width: 247,
-                          child: CarouselCard(
-                            imgname: "jawan.jpg",
-                            moviename: "Jawan",
-                            no_star: "8/10",
-                            Location: "Ghaziabad",
-                            year: "(2023)",
+                          Container(
+                            width: 247,
+                            child: HomeCard(
+                                imgname: "images/missionRaniganj.jpg",
+                                name: "Mission Raniganj",
+                                description: "Drama.Action",
+                                star: "8/10",
+                                date: "12-9-23"),
                           ),
-                        ),
-                        Container(
-                          width: 247,
-                          child: CarouselCard(
-                            imgname: "jawan.jpg",
-                            moviename: "Jawan",
-                            no_star: "8/10",
-                            Location: "Ghaziabad",
-                            year: "(2023)",
+                          Container(
+                            width: 247,
+                            child: HomeCard(
+                                imgname: "images/bheed.jpg",
+                                name: "Bheed",
+                                description: "Drama.Action",
+                                star: "6/10",
+                                date: "12-10-23"),
                           ),
-                        ),
-                      ],
-                    ),
+                        ],
+                      ),
+                    )),
+                Container(
+                    margin: EdgeInsets.all(7),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 247,
+                            child: HomeCard(
+                                imgname: "images/Blackpanther2.jpg",
+                                name: "Black panther 2 ",
+                                description: "Drama.Action",
+                                star: "7/10",
+                                date: "12-9-23"),
+                          ),
+                          Container(
+                            width: 247,
+                            child: HomeCard(
+                                imgname: "images/avatar the way of water.jpg",
+                                name: "Avatar The Way of Water",
+                                description: "Drama . Action . History",
+                                star: "8.5/10",
+                                date: "12-9-23"),
+                          ),
+                          Container(
+                            width: 247,
+                            child: HomeCard(
+                                imgname: "images/TheWhale.webp",
+                                name: "The Whale ",
+                                description: "Drama. Education",
+                                star: "9/10",
+                                date: "12-9-23"),
+                          ),
+                          Container(
+                            width: 247,
+                            child: HomeCard(
+                                imgname: "images/babylon.jpg",
+                                name: "Babylon",
+                                description: "Drama.Action",
+                                star: "8/10",
+                                date: "12-9-23"),
+                          ),
+                        ],
+                      ),
+                    )),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 6),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Offer ",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 25),
+                      ),
+                      TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "See More",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold),
+                          ))
+                    ],
                   ),
-                )
+                ),
+                // Container(
+                //   child: SingleChildScrollView(
+                //     scrollDirection: Axis.horizontal,
+                //     child: Row(
+                //       children: [
+                //         Container(
+                //           width: 247,
+                //           child: CarouselCard(
+                //             imgname: "jawan.jpg",
+                //             moviename: "Jawan",
+                //             no_star: "8/10",
+                //             Location: "Ghaziabad",
+                //             year: "(2023)",
+                //           ),
+                //         ),
+                //         Container(
+                //           width: 247,
+                //           child: CarouselCard(
+                //             imgname: "jawan.jpg",
+                //             moviename: "Jawan",
+                //             no_star: "8/10",
+                //             Location: "Ghaziabad",
+                //             year: "(2023)",
+                //           ),
+                //         ),
+                //         Container(
+                //           width: 247,
+                //           child: CarouselCard(
+                //             imgname: "jawan.jpg",
+                //             moviename: "Jawan",
+                //             no_star: "8/10",
+                //             Location: "Ghaziabad",
+                //             year: "(2023)",
+                //           ),
+                //         ),
+                //         Container(
+                //           width: 247,
+                //           child: CarouselCard(
+                //             imgname: "jawan.jpg",
+                //             moviename: "Jawan",
+                //             no_star: "8/10",
+                //             Location: "Ghaziabad",
+                //             year: "(2023)",
+                //           ),
+                //         ),
+                //         Container(
+                //           width: 247,
+                //           child: CarouselCard(
+                //             imgname: "jawan.jpg",
+                //             moviename: "Jawan",
+                //             no_star: "8/10",
+                //             Location: "Ghaziabad",
+                //             year: "(2023)",
+                //           ),
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // )
               ],
             ),
           ),

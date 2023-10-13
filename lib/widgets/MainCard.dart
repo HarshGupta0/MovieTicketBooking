@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movieticket/view/largeScreen.dart';
 
 class HomeCard extends StatefulWidget {
   final String imgname;
@@ -25,7 +26,9 @@ class HomeCardState extends State<HomeCard> {
   Widget build(BuildContext context) {
     return Container(
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(context,MaterialPageRoute(builder:(context)=> Enlarge(imgname:widget.imgname,name: widget.name,date: widget.date,description: widget.description,star: widget.star,)));
+        },
         child: Container(
           margin: EdgeInsets.all(5),
           decoration: BoxDecoration(

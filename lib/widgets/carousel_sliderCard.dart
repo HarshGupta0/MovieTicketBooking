@@ -1,107 +1,119 @@
 import 'package:flutter/material.dart';
+import 'package:movieticket/view/largeScreen.dart';
 
 class CarouselCard extends StatelessWidget {
   String? imgname;
   String? moviename;
   String? no_star;
-  String? Location;
+  String? description;
   String? year;
+  String? date;
   CarouselCard(
       {Key? key,
       required this.imgname,
       required this.moviename,
         required this.no_star,
-      required this.Location,
+      required this.description,
        required this.year,
+        required this.date,
       })
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      margin: EdgeInsets.all(15),
-      child: Stack(
-        children: [
-          ClipRRect(
-            child: Image.asset(
-              'images/$imgname',
-              fit: BoxFit.cover,
-              width: double.infinity,
-              height: 280,
+    return InkWell(
+      onTap: (){ Navigator.push(context,MaterialPageRoute(builder:(context)=>Enlarge(imgname: "$imgname", name: "$moviename", description: "$description", star:"$no_star", date:"$date")));
+      },
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        margin: EdgeInsets.all(15),
+        child: Stack(
+          children: [
+            ClipRRect(
+              child: Image.asset(
+                '$imgname',
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: 280,
+              ),
+              borderRadius: BorderRadius.circular(10),
             ),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          Positioned(
-            left: 0,
-            bottom: 0,
-            right: 0,
-            child: Container(
-              decoration: BoxDecoration(color: Colors.black.withOpacity(.5)),
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.location_on_rounded,color: Colors.white,),
-                      Text(
-                    "$Location",
-                    style:
-                    TextStyle(color:Colors.white, fontWeight: FontWeight.bold),
-                  ),
+            Positioned(
+              left: 0,
+              bottom: 0,
+              right: 0,
+              child: Container(
+                decoration: BoxDecoration(color: Colors.black.withOpacity(.5)),
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          "$description",
+                          style:
+                          TextStyle(color:Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "$date",
+                          style:
+                          TextStyle(color:Colors.white, fontWeight: FontWeight.bold),
+                        ),
                       ],
                     ),
-                ],
-              ),
-            ),
-          ),
-          Positioned(
-            right: 0,
-            left: 0,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
+                  ],
                 ),
-                color: Colors.black.withOpacity(.5),
-              ),
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(children: [
-                    Text(
-                      '$moviename',
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold,fontSize: 18),
-                    ),
-                    SizedBox(width: 6,),
-                    Text(
-                      '$year',
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold,fontSize: 14),
-                    ),
-                  ],),
-                  Row(children: [
-                    Icon(
-                      Icons.star,
-                      color: Colors.orangeAccent.shade200,
-                    ),
-                    Text(
-                      '$no_star',
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                  ],),
-                ],
               ),
             ),
-          ),
-        ],
+            Positioned(
+              right: 0,
+              left: 0,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20),
+                  ),
+                  color: Colors.black.withOpacity(.5),
+                ),
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(children: [
+                      Text(
+                        '$moviename',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold,fontSize: 18),
+                      ),
+                      SizedBox(width: 6,),
+                      Text(
+                        '$year',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold,fontSize: 14),
+                      ),
+                    ],),
+                    Row(children: [
+                      Icon(
+                        Icons.star,
+                        color: Colors.orangeAccent.shade200,
+                      ),
+                      Text(
+                        '$no_star',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ],),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

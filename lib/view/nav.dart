@@ -27,8 +27,8 @@ class NavigationMenu extends StatelessWidget {
                 backgroundColor: Color(0xff618264).withOpacity(.9),
             // animationDuration
                 // : Duration(milliseconds: 900),
-                labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
-            height: 60,
+                labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+            height: 55,
             elevation: 0,
             selectedIndex: controller.selectIndex.value,
             onDestinationSelected: (index)=>controller.selectIndex.value=index,
