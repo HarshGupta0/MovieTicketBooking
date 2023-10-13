@@ -27,7 +27,16 @@ class HomeCardState extends State<HomeCard> {
     return Container(
       child: InkWell(
         onTap: () {
-          Navigator.push(context,MaterialPageRoute(builder:(context)=> Enlarge(imgname:widget.imgname,name: widget.name,date: widget.date,description: widget.description,star: widget.star,)));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Enlarge(
+                        imgname: widget.imgname,
+                        name: widget.name,
+                        date: widget.date,
+                        description: widget.description,
+                        star: widget.star,
+                      )));
         },
         child: Container(
           margin: EdgeInsets.all(5),
@@ -45,17 +54,16 @@ class HomeCardState extends State<HomeCard> {
           child: Row(
             children: [
               Expanded(
-
-                child: Container(
-                  height: MediaQuery.of(context).size.height / 4,
-                  child: ClipRRect(
+                  child: Container(
+                height: MediaQuery.of(context).size.height / 4,
+                child: ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: Image.asset(
                     widget.imgname, // Provide a valid image asset path
                     fit: BoxFit.fitHeight,
                   ),
-                ),)
-              ),
+                ),
+              )),
               Expanded(
                 child: Container(
                   height: MediaQuery.of(context).size.height / 4,
@@ -69,6 +77,7 @@ class HomeCardState extends State<HomeCard> {
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
+                          fontFamily: "AlegreyaSans",
                           fontSize: 23,
                         ),
                       ),
@@ -77,6 +86,7 @@ class HomeCardState extends State<HomeCard> {
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
+                          fontFamily: "AlegreyaSans",
                           fontSize: 15,
                         ),
                       ),
@@ -85,6 +95,7 @@ class HomeCardState extends State<HomeCard> {
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
+                          fontFamily: "AlegreyaSans",
                           fontSize: 17,
                         ),
                       ),
@@ -96,9 +107,11 @@ class HomeCardState extends State<HomeCard> {
                           ),
                           SizedBox(width: 5),
                           Text(
-                            widget.star, // Use widget.star to access the star property
+                            widget
+                                .star, // Use widget.star to access the star property
                             style: TextStyle(
                               color: Colors.white,
+                              fontFamily: "AlegreyaSans",
                               fontWeight: FontWeight.bold,
                             ),
                           ),

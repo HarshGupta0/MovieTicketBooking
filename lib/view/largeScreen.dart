@@ -51,6 +51,7 @@ class _EnlargeState extends State<Enlarge> {
                       " About Movie :",
                       style: TextStyle(
                           color: Colors.white,
+                          fontFamily: "AlegreyaSans",
                           fontWeight: FontWeight.bold,
                           fontSize: 33,
                           wordSpacing: 2,
@@ -64,6 +65,7 @@ class _EnlargeState extends State<Enlarge> {
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.normal,
+                          fontFamily: "AlegreyaSans",
                           fontSize: 25,
                           wordSpacing: 2,
                           letterSpacing: 2),
@@ -76,6 +78,7 @@ class _EnlargeState extends State<Enlarge> {
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.normal,
+                          fontFamily: "AlegreyaSans",
                           fontSize: 25,
                           wordSpacing: 2,
                           letterSpacing: 2),
@@ -88,6 +91,7 @@ class _EnlargeState extends State<Enlarge> {
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.normal,
+                          fontFamily: "AlegreyaSans",
                           fontSize: 25,
                           wordSpacing: 2,
                           letterSpacing: 2),
@@ -107,6 +111,7 @@ class _EnlargeState extends State<Enlarge> {
                         widget.star, // Use widget.star to access the star property
                         style: TextStyle(
                           color: Colors.white,
+                            fontFamily: "AlegreyaSans",
                           fontWeight: FontWeight.bold,
                           fontSize: 25
                         ),

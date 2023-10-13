@@ -76,6 +76,7 @@ class _HomeState extends State<Home> {
                         "New Movies",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
+                            fontFamily: "AlegreyaSans",
                             color: Colors.white,
                             fontSize: 25),
                       ),
@@ -85,6 +86,7 @@ class _HomeState extends State<Home> {
                             "See More",
                             style: TextStyle(
                                 color: Colors.white,
+                                fontFamily: "AlegreyaSans",
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold),
                           ))
@@ -104,8 +106,11 @@ class _HomeState extends State<Home> {
                     //   Location: "Ghaziabad",
                     //   year: " (2023)",
                     // ),
-                    CarouselCard(imgname:"jawan", moviename: "images/jawan.jpg", no_star:"8/10", description:"Action. Drama", year: "2023", date: "10/9")
-
+                    CarouselCard(imgname: "images/jawan.jpg", name: "Jawan", description:"Action", star:"7.5/10", date:" 2-09-2023"),
+                    CarouselCard(imgname: "images/tiger3.jpg", name: "Tiger 3", description:"Action.Drama", star:"8/10", date:" 10-11-2023"),
+                    CarouselCard(imgname: "images/missionRaniganj.jpg", name: "Mission Raniganj", description:"Biopic.Drama", star:"6/10", date:" 12-11-2023"),
+                    CarouselCard(imgname: "images/yaariyan2.jpg", name: "Yaariyan 2", description:"Romance.Action", star:"7/10", date:" 22-15-2023"),
+                    CarouselCard(imgname: "images/tejas.jpg", name: "Tejas", description:"Action.BioPic", star:"8/10", date:" 25-12-2023"),
                     //2nd Image of Slider
                   ],
 
@@ -131,6 +136,7 @@ class _HomeState extends State<Home> {
                         "Popular",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
+                            fontFamily: "AlegreyaSans",
                             color: Colors.white,
                             fontSize: 25),
                       ),
@@ -209,6 +215,7 @@ class _HomeState extends State<Home> {
                         "Recently added",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
+                            fontFamily: "AlegreyaSans",
                             color: Colors.white,
                             fontSize: 25),
                       ),
@@ -334,6 +341,7 @@ class _HomeState extends State<Home> {
                       Text(
                         "Offer ",
                         style: TextStyle(
+                            fontFamily: "AlegreyaSans",
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                             fontSize: 25),

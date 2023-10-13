@@ -2,27 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:movieticket/view/largeScreen.dart';
 
 class CarouselCard extends StatelessWidget {
-  String? imgname;
-  String? moviename;
-  String? no_star;
-  String? description;
-  String? year;
-  String? date;
-  CarouselCard(
-      {Key? key,
-      required this.imgname,
-      required this.moviename,
-        required this.no_star,
-      required this.description,
-       required this.year,
-        required this.date,
-      })
-      : super(key: key);
+  final String imgname;
+  final String name;
+  final String description;
+  final String star;
+  final String date;
+  CarouselCard({
+    Key? key,
+    required this.imgname,
+    required this.name,
+    required this.description,
+    required this.star,
+    required this.date,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){ Navigator.push(context,MaterialPageRoute(builder:(context)=>Enlarge(imgname: "$imgname", name: "$moviename", description: "$description", star:"$no_star", date:"$date")));
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => Enlarge(
+                    imgname: imgname,
+                    name: name,
+                    description: description,
+                    star: star,
+                    date: date)));
       },
       child: Card(
         shape: RoundedRectangleBorder(
@@ -55,13 +61,14 @@ class CarouselCard extends StatelessWidget {
                       children: [
                         Text(
                           "$description",
-                          style:
-                          TextStyle(color:Colors.white, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                            fontFamily: "AlegreyaSans",
+                              color: Colors.white, fontWeight: FontWeight.bold),
                         ),
                         Text(
                           "$date",
-                          style:
-                          TextStyle(color:Colors.white, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold, fontFamily: "AlegreyaSans",),
                         ),
                       ],
                     ),
@@ -84,30 +91,35 @@ class CarouselCard extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(children: [
-                      Text(
-                        '$moviename',
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold,fontSize: 18),
-                      ),
-                      SizedBox(width: 6,),
-                      Text(
-                        '$year',
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold,fontSize: 14),
-                      ),
-                    ],),
-                    Row(children: [
-                      Icon(
-                        Icons.star,
-                        color: Colors.orangeAccent.shade200,
-                      ),
-                      Text(
-                        '$no_star',
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
-                      ),
-                    ],),
+                    Row(
+                      children: [
+                        Text(
+                          '$name',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "AlegreyaSans",
+                              fontSize: 18),
+                        ),
+                        SizedBox(
+                          width: 6,
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.star,
+                          color: Colors.orangeAccent.shade200,
+                        ),
+                        Text(
+                          '$star',
+                          style: TextStyle(
+                              fontFamily: "AlegreyaSans",
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),

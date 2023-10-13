@@ -27,8 +27,8 @@ class SplashScreen extends StatelessWidget {
                   "PicturePerfect",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 40,
-
+                      fontSize: 30,
+                      fontFamily: "BlackOpsOne",
                       color: Colors.black54,
                       letterSpacing: 2),
                 ),
@@ -43,6 +43,7 @@ class SplashScreen extends StatelessWidget {
                 "Invest Your Time",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
+                    fontFamily: "IndieFlower",
                     fontSize: 30,
                     color: Colors.black,
                     letterSpacing: 1),
