@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:movieticket/model/DateAndTimeModel.dart';
 
 class PaymentPage extends StatefulWidget {
-  final String imgname;
-  final String name;
-  final String description;
-  final String star;
-  final String Selecteddate;
+  String? imgname;
+  String? name;
+  String? description;
+  String? star;
+  String? Selecteddate;
 
   PaymentPage({
     Key? key, // Use Key as a parameter if you want to provide a key
-    required this.imgname,
-    required this.name,
-    required this.description,
-    required this.star,
-    required this.Selecteddate,
+    this.imgname,
+    this.name,
+    this.description,
+    this.star,
+    this.Selecteddate,
   }) : super(key: key);
 
   @override
@@ -23,9 +24,18 @@ class PaymentPage extends StatefulWidget {
 class PaymentPageState extends State<PaymentPage> {
   @override
   Widget build(BuildContext context) {
+    final item = ModalRoute.of(context)?.settings.arguments as Dateandtime;
     return SafeArea(
       child: Scaffold(
-
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Text('Date: ${item.date}'),
+              Text('Time: ${item.time}'),
+              Text('Lacation: ${item.loacation}'),
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movieticket/effects/SplashScreen.dart';
+import 'package:movieticket/view/PaymentPage.dart';
 import 'package:movieticket/view/nav.dart';
 
 void main() {
@@ -31,6 +32,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/PaymentPage':(context)=>PaymentPage(),
+      },
       debugShowCheckedModeBanner: false,
       home:showingSplash ? SplashScreen() :NavigationMenu(),
     );

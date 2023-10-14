@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movieticket/view/BookingPage.dart';
 
 class Enlarge extends StatefulWidget {
   final String imgname;
@@ -119,7 +120,9 @@ class _EnlargeState extends State<Enlarge> {
                     ],
                   ),),
                   SizedBox(height: 40,),
-                  ElevatedButton(onPressed: (){}, child:Text("Book Now"),),
+                  ElevatedButton(onPressed: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>BookingPage(imgname:widget.imgname, name: widget.name, description: widget.description, star:widget. star, date:widget.date)));
+                  }, child:Text("Book Now"),),
                   SizedBox(height: 20,),
                   BackButton(
                     onPressed: (){
