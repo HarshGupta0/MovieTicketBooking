@@ -7,7 +7,6 @@ import 'package:movieticket/widgets/MainCard.dart';
 import 'package:movieticket/widgets/SearchField.dart';
 import 'package:movieticket/widgets/carousel_sliderCard.dart';
 import 'package:movieticket/widgets/drawer.dart';
-
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -98,14 +97,6 @@ class _HomeState extends State<Home> {
                 ),
                 CarouselSlider(
                   items: [
-                    //1st Image of Slider
-                    // CarouselCard(
-                    //   imgname: "images/jawan.jpg",
-                    //   moviename: "Jawan",
-                    //   no_star: "8/10",
-                    //   Location: "Ghaziabad",
-                    //   year: " (2023)",
-                    // ),
                     CarouselCard(imgname: "images/jawan.jpg", name: "Jawan", description:"Action", star:"7.5/10", date:" 2-09-2023"),
                     CarouselCard(imgname: "images/tiger3.jpg", name: "Tiger 3", description:"Action.Drama", star:"8/10", date:" 10-11-2023"),
                     CarouselCard(imgname: "images/missionRaniganj.jpg", name: "Mission Raniganj", description:"Biopic.Drama", star:"6/10", date:" 12-11-2023"),
@@ -358,65 +349,26 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                 ),
-                // Container(
-                //   child: SingleChildScrollView(
-                //     scrollDirection: Axis.horizontal,
-                //     child: Row(
-                //       children: [
-                //         Container(
-                //           width: 247,
-                //           child: CarouselCard(
-                //             imgname: "jawan.jpg",
-                //             moviename: "Jawan",
-                //             no_star: "8/10",
-                //             Location: "Ghaziabad",
-                //             year: "(2023)",
-                //           ),
-                //         ),
-                //         Container(
-                //           width: 247,
-                //           child: CarouselCard(
-                //             imgname: "jawan.jpg",
-                //             moviename: "Jawan",
-                //             no_star: "8/10",
-                //             Location: "Ghaziabad",
-                //             year: "(2023)",
-                //           ),
-                //         ),
-                //         Container(
-                //           width: 247,
-                //           child: CarouselCard(
-                //             imgname: "jawan.jpg",
-                //             moviename: "Jawan",
-                //             no_star: "8/10",
-                //             Location: "Ghaziabad",
-                //             year: "(2023)",
-                //           ),
-                //         ),
-                //         Container(
-                //           width: 247,
-                //           child: CarouselCard(
-                //             imgname: "jawan.jpg",
-                //             moviename: "Jawan",
-                //             no_star: "8/10",
-                //             Location: "Ghaziabad",
-                //             year: "(2023)",
-                //           ),
-                //         ),
-                //         Container(
-                //           width: 247,
-                //           child: CarouselCard(
-                //             imgname: "jawan.jpg",
-                //             moviename: "Jawan",
-                //             no_star: "8/10",
-                //             Location: "Ghaziabad",
-                //             year: "(2023)",
-                //           ),
-                //         ),
-                //       ],
-                //     ),
-                //   ),
-                // )
+                CarouselSlider(
+                  items: [
+                    CarouselCard(imgname: "images/jawan.jpg", name: "Jawan", description:"Action", star:"7.5/10", date:" 2-09-2023"),
+                    CarouselCard(imgname: "images/tiger3.jpg", name: "Tiger 3", description:"Action.Drama", star:"8/10", date:" 10-11-2023"),
+                    CarouselCard(imgname: "images/missionRaniganj.jpg", name: "Mission Raniganj", description:"Biopic.Drama", star:"6/10", date:" 12-11-2023"),
+                    CarouselCard(imgname: "images/yaariyan2.jpg", name: "Yaariyan 2", description:"Romance.Action", star:"7/10", date:" 22-15-2023"),
+                    CarouselCard(imgname: "images/tejas.jpg", name: "Tejas", description:"Action.BioPic", star:"8/10", date:" 25-12-2023"),
+                    //2nd Image of Slider
+                  ],
+
+                  //Slider Container properties
+                  options: CarouselOptions(
+                    height: 280,
+                    autoPlay: true,
+                    aspectRatio: 15 / 20,
+                    autoPlayCurve: Curves.fastEaseInToSlowEaseOut,
+                    enableInfiniteScroll: true,
+                    autoPlayAnimationDuration: Duration(milliseconds: 200),
+                  ),
+                ),
               ],
             ),
           ),
