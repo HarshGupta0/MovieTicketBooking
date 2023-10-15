@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movieticket/model/FavoriteModel.dart';
 import 'package:movieticket/view/BookingPage.dart';
 
 class Enlarge extends StatefulWidget {
@@ -22,6 +23,8 @@ class Enlarge extends StatefulWidget {
 }
 
 class _EnlargeState extends State<Enlarge> {
+  List<favorite> favoriteList=[];
+  bool isLiked=false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -114,16 +117,29 @@ class _EnlargeState extends State<Enlarge> {
                           color: Colors.white,
                             fontFamily: "AlegreyaSans",
                           fontWeight: FontWeight.bold,
-                          fontSize: 25
+                          fontSize: 20
                         ),
                       ),
                     ],
                   ),),
-                  SizedBox(height: 40,),
                   ElevatedButton(onPressed: (){
                     Navigator.push(context,MaterialPageRoute(builder: (context)=>BookingPage(imgname:widget.imgname, name: widget.name, description: widget.description, star:widget. star, date:widget.date)));
                   }, child:Text("Book Now"),),
-                  SizedBox(height: 20,),
+
+                  IconButton(onPressed: (){
+                    setState(() {
+                      isLiked=!isLiked;
+                      if(isLiked==true){
+                        favoriteList.add(favorite(widget.imgname, widget.name, widget.description, isLiked, widget.date, favoriteList, widget.star));
+                      }
+                      if(isLiked!=true){
+                        favoriteList.removeLast();
+                      }
+                    });
+                  },
+                      icon:isLiked?Icon(Icons.favorite,color: Colors.red,):Icon(Icons.favorite,color: Colors.grey,),
+
+                  ),
                   BackButton(
                     onPressed: (){
                       Navigator.pop(context);
