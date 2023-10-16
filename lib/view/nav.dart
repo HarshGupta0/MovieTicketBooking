@@ -3,10 +3,9 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movieticket/view/Cinemas.dart';
+import 'package:movieticket/view/FavoriteScreen.dart';
 import 'package:movieticket/view/coming_soon.dart';
 import 'package:movieticket/view/home.dart';
-import 'package:movieticket/view/more.dart';
-
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
 
@@ -18,8 +17,9 @@ class NavigationMenu extends StatelessWidget {
           gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [Colors.green.shade600, Colors.black,Colors.green.shade600])),
+              colors: [Colors.green.shade600, Colors.black26])),
       child:  Scaffold(
+        backgroundColor: Colors.transparent,
       bottomNavigationBar: Obx(
             () => NavigationBar(
                 indicatorColor: Colors.green.shade400,
@@ -56,6 +56,6 @@ class NavigationController extends GetxController {
     Home(),
     Cinemas(),
     ComingSoon(),
-    more(),
+    FavScreen(),
   ];
 }

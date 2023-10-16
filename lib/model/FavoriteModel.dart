@@ -4,16 +4,15 @@ class favorite {
   final String description;
   final String star;
   final String date;
-  final List fav;
   final bool isFavorite;
 
   favorite(
+
       this.imgname,
       this.name,
       this.description,
       this.isFavorite,
       this.date,
-      this.fav,
       this.star,
       );
 }

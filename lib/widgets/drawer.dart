@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:movieticket/model/FavoriteModel.dart';
+import 'package:movieticket/view/largeScreen.dart';
+import 'package:movieticket/view/FavoriteScreen.dart';
 class drawer extends StatefulWidget {
   const drawer({Key? key}) : super(key: key);
 
@@ -40,11 +43,11 @@ class _drawerState extends State<drawer> {
             leading: Icon(Icons.video_label),
             title: Text(' Saved Blogs '),
             onTap: () {
-              //   Navigator.push(
-              //       context,
-              //       MaterialPageRoute(
-              //           builder: (context) =>
-              //               Liked()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                       FavScreen()));
             },
           ), //DrawerHeader
           ListTile(

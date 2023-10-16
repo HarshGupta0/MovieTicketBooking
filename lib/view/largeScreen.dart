@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movieticket/model/FavoriteModel.dart';
 import 'package:movieticket/view/BookingPage.dart';
 
+List<favorite> favoriteList=[];
 class Enlarge extends StatefulWidget {
   final String imgname;
   final String name;
@@ -23,7 +24,6 @@ class Enlarge extends StatefulWidget {
 }
 
 class _EnlargeState extends State<Enlarge> {
-  List<favorite> favoriteList=[];
   bool isLiked=false;
   @override
   Widget build(BuildContext context) {
@@ -130,11 +130,11 @@ class _EnlargeState extends State<Enlarge> {
                     setState(() {
                       isLiked=!isLiked;
                       if(isLiked==true){
-                        favoriteList.add(favorite(widget.imgname, widget.name, widget.description, isLiked, widget.date, favoriteList, widget.star));
+                        favoriteList.add(favorite(widget.imgname, widget.name, widget.description, isLiked, widget.date,widget.star));
                       }
-                      if(isLiked!=true){
-                        favoriteList.removeLast();
-                      }
+                      // if(isLiked!=true){
+                      //   favoriteList.removeLast();
+                      // }
                     });
                   },
                       icon:isLiked?Icon(Icons.favorite,color: Colors.red,):Icon(Icons.favorite,color: Colors.grey,),
@@ -153,3 +153,39 @@ class _EnlargeState extends State<Enlarge> {
     );
   }
 }
+//
+// class FavScreen extends StatefulWidget {
+//   const FavScreen({super.key});
+//
+//   @override
+//   State<FavScreen> createState() => FavScreenState();
+// }
+//
+// class FavScreenState extends State<FavScreen> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return SafeArea(
+//       child: Scaffold(
+//         backgroundColor: Colors.cyan.withOpacity(.5),
+//         body: SingleChildScrollView(
+//           child: Container(
+//             child: Column(
+//               children: [
+//                 ListView.builder(
+//                   itemCount: favoriteList.length,
+//                   itemBuilder: (context, index) {
+//                     final item = favoriteList[index];
+//                     return ListTile(
+//                       title: Text(item.description), // Assuming 'description' is a property of the favorite.
+//                       // subtitle: Text("$product"),
+//                     );
+//                   },
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
