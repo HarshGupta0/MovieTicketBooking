@@ -700,29 +700,29 @@ class _CinemasState extends State<Cinemas> {
                                     Container(
                                       width: 247,
                                       child: HomeCard(
-                                          imgname: "images/tiger3.jpg",
-                                          name: "Tiger 3",
+                                          imgname: "images/blueBeetle.jpg",
+                                          name: "Blue Beetle",
                                           description: "Drama.Action",
-                                          star: "7/10",
-                                          date: "12-9-23"),
+                                          star: "8.5/10",
+                                          date: "1-11-23"),
                                     ),
                                     Container(
                                       width: 247,
                                       child: HomeCard(
-                                          imgname: "images/adipurush.jpg",
-                                          name: "Adipurush",
+                                          imgname: "images/Flash.png",
+                                          name: "Flash",
                                           description: "Drama . Action . History",
-                                          star: "5/10",
-                                          date: "12-9-23"),
+                                          star: "6/10",
+                                          date: "22-8-23"),
                                     ),
                                     Container(
                                       width: 247,
                                       child: HomeCard(
-                                          imgname: "images/omg2.jpg",
-                                          name: "OMG 2",
-                                          description: "Drama. Education",
-                                          star: "7/10",
-                                          date: "12-9-23"),
+                                          imgname: "images/johnwickchapter4.png",
+                                          name: "Johnwick Chapter 4",
+                                          description: "Action . Drama",
+                                          star: "7.5/10",
+                                          date: "2-10-23"),
                                     ),
                                     Container(
                                       width: 247,
@@ -736,11 +736,11 @@ class _CinemasState extends State<Cinemas> {
                                     Container(
                                       width: 247,
                                       child: HomeCard(
-                                          imgname: "images/uturn.jpg",
-                                          name: "Uturn",
+                                          imgname: "images/sazam-2.png",
+                                          name: "sazam 2",
                                           description: "Drama.Action",
                                           star: "6.5/10",
-                                          date: "12-9-23"),
+                                          date: "07-08-23"),
                                     ),
                                   ],
                                 ),
@@ -779,6 +779,15 @@ class _CinemasState extends State<Cinemas> {
                                 scrollDirection: Axis.horizontal,
                                 child: Row(
                                   children: [
+                                    Container(
+                                      width: 247,
+                                      child: HomeCard(
+                                          imgname: "images/sazam-2.png",
+                                          name: "sazam 2",
+                                          description: "Drama.Action",
+                                          star: "6.5/10",
+                                          date: "07-08-23"),
+                                    ),
                                     Container(
                                       width: 247,
                                       child: HomeCard(
@@ -833,6 +842,15 @@ class _CinemasState extends State<Cinemas> {
                                 scrollDirection: Axis.horizontal,
                                 child: Row(
                                   children: [
+                                    Container(
+                                      width: 247,
+                                      child: HomeCard(
+                                          imgname: "images/johnwickchapter4.png",
+                                          name: "Johnwick Chapter 4",
+                                          description: "Action . Drama",
+                                          star: "7.5/10",
+                                          date: "2-10-23"),
+                                    ),
                                     Container(
                                       width: 247,
                                       child: HomeCard(
