@@ -3,6 +3,7 @@ import 'package:movieticket/model/FavoriteModel.dart';
 import 'package:movieticket/view/BookingPage.dart';
 
 List<favorite> favoriteList=[];
+bool isthere=false;
 class Enlarge extends StatefulWidget {
   final String imgname;
   final String name;
@@ -129,12 +130,10 @@ class _EnlargeState extends State<Enlarge> {
                   IconButton(onPressed: (){
                     setState(() {
                       isLiked=!isLiked;
+                      isthere=true;
                       if(isLiked==true){
                         favoriteList.add(favorite(widget.imgname, widget.name, widget.description, isLiked, widget.date,widget.star));
                       }
-                      // if(isLiked!=true){
-                      //   favoriteList.removeLast();
-                      // }
                     });
                   },
                       icon:isLiked?Icon(Icons.favorite,color: Colors.red,):Icon(Icons.favorite,color: Colors.grey,),

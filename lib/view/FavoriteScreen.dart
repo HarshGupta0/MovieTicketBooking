@@ -8,7 +8,14 @@ class FavScreen extends StatefulWidget {
 }
 
 class FavScreenState extends State<FavScreen> {
-  bool isthere=false;
+  @override
+  void initState() {
+    // TODO: implement initState
+    if(favoriteList.length==0){
+      isthere=false;
+    }
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,7 +31,7 @@ class FavScreenState extends State<FavScreen> {
         title: Text('Favorite Movies'),
         centerTitle: true,
       ),
-      body: ListView.builder(
+      body: isthere?ListView.builder(
         itemCount: favoriteList.length,
         itemBuilder: (context, index) {
           final movie = favoriteList[index];
@@ -47,7 +54,8 @@ class FavScreenState extends State<FavScreen> {
             ),
           );
         },
-      ),
+      ):Center(child:Text(" EMPTY",style:TextStyle(fontSize: 30,color: Colors.grey
+      ))),
     ),);
   }
 }
