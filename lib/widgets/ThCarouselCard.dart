@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:movieticket/view/ThreaterLarge.dart';
 import 'package:movieticket/view/largeScreen.dart';
 
-class CarouselCard extends StatelessWidget {
+class ThCarouselCard extends StatelessWidget {
   final String imgname;
   final String name;
   final String description;
   final String star;
   final String date;
-  CarouselCard({
+  ThCarouselCard({
     Key? key,
     required this.imgname,
     required this.name,
@@ -23,7 +24,7 @@ class CarouselCard extends StatelessWidget {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => Enlarge(
+                builder: (context) => ThEnlarge(
                     imgname: imgname,
                     name: name,
                     description: description,
@@ -62,13 +63,13 @@ class CarouselCard extends StatelessWidget {
                         Text(
                           "$description",
                           style: TextStyle(
-                            fontFamily: "AlegreyaSans",
+                              fontFamily: "AlegreyaSans",
                               color: Colors.white, fontWeight: FontWeight.bold),
                         ),
                         Text(
                           "$date",
                           style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold, fontFamily: "AlegreyaSans",),
+                            color: Colors.white, fontWeight: FontWeight.bold, fontFamily: "AlegreyaSans",),
                         ),
                       ],
                     ),

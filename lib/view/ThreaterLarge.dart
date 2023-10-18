@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:movieticket/model/FavoriteModel.dart';
-import 'package:movieticket/view/BookingPage.dart';
-
-List<favorite> favoriteList=[];
-bool isthere=false;
-class Enlarge extends StatefulWidget {
+import 'package:movieticket/model/TheaterFavModel.dart';
+List<Theaterfavorite> TheaterfavoriteList=[];
+bool isthereTheater=false;
+class ThEnlarge extends StatefulWidget {
   final String imgname;
   final String name;
   final String description;
   final String star;
   final String date;
 
-  Enlarge({
+  ThEnlarge({
     Key? key, // Use Key as a parameter if you want to provide a key
     required this.imgname,
     required this.name,
@@ -21,10 +19,10 @@ class Enlarge extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<Enlarge> createState() => _EnlargeState();
+  State<ThEnlarge> createState() => _ThEnlargeState();
 }
 
-class _EnlargeState extends State<Enlarge> {
+class _ThEnlargeState extends State<ThEnlarge> {
   bool isLiked=false;
   @override
   Widget build(BuildContext context) {
@@ -53,7 +51,7 @@ class _EnlargeState extends State<Enlarge> {
                   SizedBox(height: 10),
                   Center(
                     child: Text(
-                      " About Movie :",
+                      " About Theater :",
                       style: TextStyle(
                           color: Colors.white,
                           fontFamily: "AlegreyaSans",
@@ -123,21 +121,16 @@ class _EnlargeState extends State<Enlarge> {
                       ),
                     ],
                   ),),
-                  ElevatedButton(onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>BookingPage(imgname:widget.imgname, name: widget.name, description: widget.description, star:widget. star, date:widget.date)));
-                  }, child:Text("Book Now"),),
-
                   IconButton(onPressed: (){
                     setState(() {
                       isLiked=!isLiked;
-                      isthere=true;
+                      isthereTheater=true;
                       if(isLiked==true){
-                        favoriteList.add(favorite(widget.imgname, widget.name, widget.description, isLiked, widget.date,widget.star));
+                        TheaterfavoriteList.add(Theaterfavorite(widget.imgname, widget.name, widget.description, isLiked, widget.date,widget.star));
                       }
                     });
                   },
                     icon:isLiked?Icon(Icons.favorite,color: Colors.red,):Icon(Icons.favorite,color: Colors.grey,),
-
                   ),
                   BackButton(
                     onPressed: (){

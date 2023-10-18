@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movieticket/model/FavoriteModel.dart';
-import 'package:movieticket/view/largeScreen.dart';
-import 'package:movieticket/view/FavoriteScreen.dart';
+import 'package:movieticket/view/TheaterFavScreen.dart';
 class drawer extends StatefulWidget {
   const drawer({Key? key}) : super(key: key);
 
@@ -18,11 +16,11 @@ class _drawerState extends State<drawer> {
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.black,
+              color: Color(0xff618264).withOpacity(.9),
             ), //BoxDecoration
             child: UserAccountsDrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.black,
+                color:Color(0xff618264).withOpacity(0),
               ),
               accountName: Text(
                 "HARSH GUPTA",
@@ -34,20 +32,20 @@ class _drawerState extends State<drawer> {
                 backgroundColor: Colors.white.withOpacity(.6),
                 child: Text(
                   "H",
-                  style: TextStyle(fontSize: 30.0, color: Colors.black),
+                  style: TextStyle(fontSize: 30.0, color:Color(0xff618264)),
                 ), //Text
               ), //circleAvatar
             ), //UserAccountDrawerHeader
           ),
           ListTile(
-            leading: Icon(Icons.video_label),
-            title: Text(' Saved Blogs '),
+            leading: Icon(Icons.favorite),
+            title: Text('Favorite Theater'),
             onTap: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) =>
-                       FavScreen()));
+                        builder: (context) =>TheaterFavScreen()
+                       ));
             },
           ), //DrawerHeader
           ListTile(

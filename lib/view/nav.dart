@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movieticket/view/Cinemas.dart';
 import 'package:movieticket/view/FavoriteScreen.dart';
+import 'package:movieticket/view/Theaters.dart';
 import 'package:movieticket/view/home.dart';
 import 'package:movieticket/widgets/TabBar.dart';
 class NavigationMenu extends StatelessWidget {
@@ -53,7 +54,7 @@ class NavigationController extends GetxController {
   final screens = [
     Home(),
     Cinemas(),
-    MyTabBar(),
+    Theaters(),
     FavScreen(),
   ];
 }

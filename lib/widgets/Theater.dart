@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:movieticket/view/largeScreen.dart';
-
-class CarouselCard extends StatelessWidget {
+import 'package:movieticket/view/ThreaterLarge.dart';
+class Theater extends StatefulWidget {
   final String imgname;
   final String name;
   final String description;
   final String star;
   final String date;
-  CarouselCard({
+  Theater({
     Key? key,
     required this.imgname,
     required this.name,
@@ -16,6 +15,12 @@ class CarouselCard extends StatelessWidget {
     required this.date,
   }) : super(key: key);
 
+
+  @override
+  State<Theater> createState() => _TheaterState();
+}
+
+class _TheaterState extends State<Theater> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -23,12 +28,12 @@ class CarouselCard extends StatelessWidget {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => Enlarge(
-                    imgname: imgname,
-                    name: name,
-                    description: description,
-                    star: star,
-                    date: date)));
+                builder: (context) => ThEnlarge(
+                    imgname: widget.imgname,
+                    name: widget.name,
+                    description: widget.description,
+                    star: widget.star,
+                    date: widget.date)));
       },
       child: Card(
         shape: RoundedRectangleBorder(
@@ -39,7 +44,7 @@ class CarouselCard extends StatelessWidget {
           children: [
             ClipRRect(
               child: Image.asset(
-                '$imgname',
+                widget.imgname,
                 fit: BoxFit.cover,
                 width: double.infinity,
                 height: 280,
@@ -60,15 +65,15 @@ class CarouselCard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
-                          "$description",
+                          widget.description,
                           style: TextStyle(
-                            fontFamily: "AlegreyaSans",
+                              fontFamily: "AlegreyaSans",
                               color: Colors.white, fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "$date",
+                          widget.date,
                           style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold, fontFamily: "AlegreyaSans",),
+                            color: Colors.white, fontWeight: FontWeight.bold, fontFamily: "AlegreyaSans",),
                         ),
                       ],
                     ),
@@ -94,7 +99,7 @@ class CarouselCard extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          '$name',
+                          widget.name,
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -113,7 +118,7 @@ class CarouselCard extends StatelessWidget {
                           color: Colors.orangeAccent.shade200,
                         ),
                         Text(
-                          '$star',
+                          widget.star,
                           style: TextStyle(
                               fontFamily: "AlegreyaSans",
                               color: Colors.white, fontWeight: FontWeight.bold),
