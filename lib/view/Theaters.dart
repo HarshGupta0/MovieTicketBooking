@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:movieticket/widgets/ThCarouselCard.dart';
-import 'package:movieticket/widgets/carousel_sliderCard.dart';
-
 class Theaters extends StatefulWidget {
   const Theaters({Key ,key});
 
