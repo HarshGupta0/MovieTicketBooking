@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movieticket/model/FavoriteModel.dart';
 import 'package:movieticket/view/BookingPage.dart';
-
 List<favorite> favoriteList=[];
 bool isthere=false;
 class Enlarge extends StatefulWidget {
@@ -12,7 +11,7 @@ class Enlarge extends StatefulWidget {
   final String date;
 
   Enlarge({
-    Key? key, // Use Key as a parameter if you want to provide a key
+    Key? key,
     required this.imgname,
     required this.name,
     required this.description,
@@ -125,10 +124,56 @@ class _EnlargeState extends State<Enlarge> {
                   ),),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.green, // Background color of the button
+                      primary: Colors.green,
                     ),
                     onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>BookingPage(imgname:widget.imgname, name: widget.name, description: widget.description, star:widget. star, date:widget.date)));
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return Container(
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                    colors: [Colors.green.shade600, Colors.black26])),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                ListTile(
+                                  title: Text('Languages :-',style: TextStyle(color:Colors.black,fontSize: 23,),),
+                                  onTap: () {
+                                    Navigator.push(context,MaterialPageRoute(builder: (context)=>BookingPage(imgname: widget.imgname, name: widget.name, description: widget.description, star: widget.star, date: widget.date)));
+                                  },
+                                ),
+                                ListTile(
+                                  title: Text('English',style: TextStyle(color:Colors.white,fontSize: 20),),
+                                  onTap: () {
+                                    Navigator.push(context,MaterialPageRoute(builder: (context)=>BookingPage(imgname: widget.imgname, name: widget.name, description: widget.description, star: widget.star, date: widget.date)));
+                                  },
+                                ),
+                                ListTile(
+                                  title: Text('Hindi',style: TextStyle(color:Colors.white,fontSize: 20)),
+                                  onTap: () {
+                                    Navigator.push(context,MaterialPageRoute(builder: (context)=>BookingPage(imgname: widget.imgname, name: widget.name, description: widget.description, star: widget.star, date: widget.date)));
+                                  },
+                                ),
+                                ListTile(
+                                  title: Text('Tamil',style: TextStyle(color:Colors.white,fontSize: 20)),
+                                  onTap: () {
+                                    Navigator.push(context,MaterialPageRoute(builder: (context)=>BookingPage(imgname: widget.imgname, name: widget.name, description: widget.description, star: widget.star, date: widget.date)));
+                                  },
+                                ),
+                                ListTile(
+                                  title: Text('Telugu',style: TextStyle(color:Colors.white,fontSize: 20)),
+                                  onTap: () {
+                                    Navigator.push(context,MaterialPageRoute(builder: (context)=>BookingPage(imgname: widget.imgname, name: widget.name, description: widget.description, star: widget.star, date: widget.date)));
+                                  },
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      );
                   }, child:Text("Proceed"),),
 
                   IconButton(onPressed: (){
