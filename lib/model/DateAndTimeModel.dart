@@ -1,6 +1,7 @@
 class Dateandtime{
+  final String imgname;
   final String date;
   final String time;
-  final String loacation;
-  Dateandtime(this.date,this.time,this.loacation);
+  final String location;
+  Dateandtime(this.date,this.time,this.location,this.imgname);
 }

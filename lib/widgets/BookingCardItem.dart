@@ -35,7 +35,7 @@ class _BookingCardItemState extends State<BookingCardItem> {
           onPressed: () {
             Navigator.pushNamed(context, '/PaymentPage',
                 arguments: Dateandtime(
-                    widget.date, widget.time, widget.loction));
+                    widget.date, widget.time, widget.loction,widget.imgname));
           },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

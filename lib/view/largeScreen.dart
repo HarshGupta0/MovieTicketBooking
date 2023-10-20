@@ -123,9 +123,13 @@ class _EnlargeState extends State<Enlarge> {
                       ),
                     ],
                   ),),
-                  ElevatedButton(onPressed: (){
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.green, // Background color of the button
+                    ),
+                    onPressed: (){
                     Navigator.push(context,MaterialPageRoute(builder: (context)=>BookingPage(imgname:widget.imgname, name: widget.name, description: widget.description, star:widget. star, date:widget.date)));
-                  }, child:Text("Book Now"),),
+                  }, child:Text("Proceed"),),
 
                   IconButton(onPressed: (){
                     setState(() {
