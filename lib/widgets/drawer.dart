@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movieticket/view/ProfilePage.dart';
 import 'package:movieticket/view/TheaterFavScreen.dart';
 class drawer extends StatefulWidget {
   const drawer({Key? key}) : super(key: key);
@@ -52,11 +53,11 @@ class _drawerState extends State<drawer> {
             leading: Icon(Icons.person),
             title: Text(' My Profile '),
             onTap: () {
-              //   Navigator.push(
-              //       context,
-              //       MaterialPageRoute(
-              //           builder: (context) =>
-              //               Profile()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            ProfilePage()));
             },
           ),
           ListTile(
