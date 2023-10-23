@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movieticket/model/DateAndTimeModel.dart';
 import 'package:movieticket/widgets/BookingCardItem.dart';
 
 class BookingPage extends StatefulWidget {
@@ -10,7 +9,7 @@ class BookingPage extends StatefulWidget {
   final String date;
 
   BookingPage({
-    Key? key, // Use Key as a parameter if you want to provide a key
+    Key? key,
     required this.imgname,
     required this.name,
     required this.description,

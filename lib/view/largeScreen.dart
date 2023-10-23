@@ -140,7 +140,7 @@ class _EnlargeState extends State<Enlarge> {
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
                                 ListTile(
-                                  title: Text('Languages :-',style: TextStyle(color:Colors.black,fontSize: 23,),),
+                                  title: Text('Language :',style: TextStyle(color:Colors.black87.withOpacity(.6),fontSize: 23,),),
                                   onTap: () {
                                     Navigator.push(context,MaterialPageRoute(builder: (context)=>BookingPage(imgname: widget.imgname, name: widget.name, description: widget.description, star: widget.star, date: widget.date)));
                                   },
