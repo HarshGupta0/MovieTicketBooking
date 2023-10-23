@@ -26,6 +26,7 @@ class _HomeState extends State<Home> {
               end: Alignment.bottomRight,
               colors: [Colors.green.shade600, Colors.black26])),
       child: Scaffold(
+        endDrawerEnableOpenDragGesture: true,
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           backgroundColor: Color(0xff618264).withOpacity(.9),
