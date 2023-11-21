@@ -14,7 +14,7 @@ class CustomSearchDelegate extends SearchDelegate {
     "Dream Girl 2",
     "Avatar: The Way of Water ",
     "Tiger 3",
-    "	Brahmāstra: Part One – Shiva",
+    "Brahmāstra: Part One – Shiva",
     "Drishyam 2",
     "The Kashmir Files",
 
@@ -30,8 +30,7 @@ class CustomSearchDelegate extends SearchDelegate {
       ),
     ];
   }
-
-// second overwrite to pop out of search menu
+  // second overwrite to pop out of search menu
   @override
   Widget? buildLeading(BuildContext context) {
     return IconButton(
@@ -41,7 +40,6 @@ class CustomSearchDelegate extends SearchDelegate {
       icon: Icon(Icons.arrow_back),
     );
   }
-
 // third overwrite to show query result
   @override
   Widget buildResults(BuildContext context) {

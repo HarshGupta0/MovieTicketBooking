@@ -20,19 +20,19 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Container(
-      decoration: BoxDecoration(
+          decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [Colors.green.shade600, Colors.black26])),
-      child: Scaffold(
-        endDrawerEnableOpenDragGesture: true,
-        backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          backgroundColor: Color(0xff618264).withOpacity(.9),
-          title: GlithEffect(
-            child: Text("Now Showing"),
-          ),
+          child: Scaffold(
+            endDrawerEnableOpenDragGesture: true,
+            backgroundColor: Colors.transparent,
+            appBar: AppBar(
+             backgroundColor: Color(0xff618264).withOpacity(.9),
+              title: GlithEffect(
+                 child: Text("Now Showing"),
+                    ),
           centerTitle: true,
           toolbarHeight: 60.2,
           toolbarOpacity: 0.8,
@@ -57,22 +57,22 @@ class _HomeState extends State<Home> {
           elevation: 50.0,
           systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
-        drawer: drawer(),
+            drawer: drawer(),
         body: Container(
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
               children: [
                 InputText(MylableText: "Find Movie"),
-                SizedBox(
-                  height: 10,
+                const SizedBox(
+                 height: 10,
                 ), //
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 6),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                     const Text(
                         "New Movies",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -124,7 +124,7 @@ class _HomeState extends State<Home> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                     const Text(
                         "Popular",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -134,7 +134,7 @@ class _HomeState extends State<Home> {
                       ),
                       TextButton(
                           onPressed: () {},
-                          child: Text(
+                          child: const Text(
                             "See More",
                             style: TextStyle(
                                 color: Colors.white,
@@ -203,7 +203,7 @@ class _HomeState extends State<Home> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                     const Text(
                         "Recently added",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -213,7 +213,7 @@ class _HomeState extends State<Home> {
                       ),
                       TextButton(
                           onPressed: () {},
-                          child: Text(
+                          child:const Text(
                             "See More",
                             style: TextStyle(
                                 color: Colors.white,
@@ -223,11 +223,11 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                 ),
-                SizedBox(
+               const SizedBox(
                   height: 10,
                 ),
                 Container(
-                    margin: EdgeInsets.all(7),
+                    margin:const EdgeInsets.all(7),
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
@@ -257,7 +257,8 @@ class _HomeState extends State<Home> {
                                 name: "Gumraah",
                                 description: "Drama. Education",
                                 star: "6.5/10",
-                                date: "12-9-23"),
+                                date: "12-9-23",
+                            ),
                           ),
                           Container(
                             width: 247,
@@ -279,7 +280,8 @@ class _HomeState extends State<Home> {
                           ),
                         ],
                       ),
-                    )),
+                    ),
+                ),
                 Container(
                     margin: EdgeInsets.all(7),
                     child: SingleChildScrollView(
@@ -324,13 +326,14 @@ class _HomeState extends State<Home> {
                           ),
                         ],
                       ),
-                    )),
+                    ),
+                ),
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 6),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         "Offer ",
                         style: TextStyle(
                             fontFamily: "AlegreyaSans",
@@ -340,13 +343,14 @@ class _HomeState extends State<Home> {
                       ),
                       TextButton(
                           onPressed: () {},
-                          child: Text(
+                          child: const Text(
                             "See More",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold),
-                          ))
+                          ),
+                      ),
                     ],
                   ),
                 ),
@@ -359,7 +363,6 @@ class _HomeState extends State<Home> {
                     CarouselCard(imgname: "images/tejas.jpg", name: "Tejas", description:"Action.BioPic", star:"8/10", date:" 25-12-2023"),
                     //2nd Image of Slider
                   ],
-
                   //Slider Container properties
                   options: CarouselOptions(
                     height: 280,
@@ -375,6 +378,7 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-    ));
+    ),
+    );
   }
 }
