@@ -1,66 +1,84 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-class SelectSeat extends StatefulWidget {
-  const SelectSeat({Key? key}) : super(key: key);
+
+class TheaterScreen extends StatefulWidget {
+  const TheaterScreen({Key? key}) : super(key: key);
 
   @override
-  _SelectSeatState createState() => _SelectSeatState();
+  _TheaterScreenState createState() => _TheaterScreenState();
 }
 
-class _SelectSeatState extends State<SelectSeat> {
+class _TheaterScreenState extends State<TheaterScreen> {
   List<String> selectedSeats = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Select Seat'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.done),
-            onPressed: () {
-              // Handle the selected seats
-              print('Selected Seats: $selectedSeats');
-              Fluttertoast.showToast(msg: 'Seats booked: ${selectedSeats.join(', ')}');
-            },
-          ),
-        ],
+        backgroundColor: Color(0xff618264).withOpacity(.9),
+        title: Text('Theater Screen'),
+        centerTitle: true,
       ),
-      body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 5, // Adjust as per your seating arrangement
-          crossAxisSpacing: 8.0,
-          mainAxisSpacing: 8.0,
-        ),
-        itemCount: 30, // Total number of seats
-        itemBuilder: (context, index) {
-          final seatNumber = index + 1;
-          final isSeatSelected = selectedSeats.contains(seatNumber.toString());
+      body: Container(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 9, // Adjust as per your seating arrangement
+            crossAxisSpacing: 8.0,
+            mainAxisSpacing: 8.0,
+          ),
+          itemCount: 90, // Total number of seats
+          itemBuilder: (context, index) {
+            final seatNumber = index + 1;
+            final isSeatSelected = selectedSeats.contains(seatNumber.toString());
 
-          return GestureDetector(
-            onTap: () {
-              setState(() {
-                if (isSeatSelected) {
-                  selectedSeats.remove(seatNumber.toString());
-                } else {
-                  selectedSeats.add(seatNumber.toString());
-                }
-              });
-            },
-            child: Container(
-              color: isSeatSelected ? Colors.red : Colors.green,
-              child: Center(
-                child: Text(
-                  seatNumber.toString(),
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
+            return GestureDetector(
+              onTap: () {
+                setState(() {
+                  if (isSeatSelected) {
+                    selectedSeats.remove(seatNumber.toString());
+                  } else {
+                    selectedSeats.add(seatNumber.toString());
+                  }
+                });
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  color: isSeatSelected ? Colors.red : Colors.green,
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: Center(
+                  child: Text(
+                    seatNumber.toString(),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  // Handle the selected seats
+                  print('Selected Seats: $selectedSeats');
+                  Fluttertoast.showToast(
+                      msg: 'Seats booked: ${selectedSeats.join(', ')}');
+                },
+                child: Text('Book Selected Seats'),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

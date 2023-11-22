@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movieticket/model/DateAndTimeModel.dart';
+
+import '../view/select_seat.dart';
 class BookingCardItem extends StatefulWidget {
   final String imgname;
   final String time;
@@ -33,9 +35,10 @@ class _BookingCardItemState extends State<BookingCardItem> {
               colors: [Colors.green.shade600, Colors.black26])),
       child: OutlinedButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/PaymentPage',
-                arguments: Dateandtime(
-                    widget.date, widget.time, widget.loction,widget.imgname));
+            // Navigator.pushNamed(context, '/PaymentPage',
+            //     arguments: Dateandtime(
+            //         widget.date, widget.time, widget.loction,widget.imgname));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>TheaterScreen()));
           },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
