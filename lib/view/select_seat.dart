@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-
-import '../model/DateAndTimeModel.dart';
-
 class TheaterScreen extends StatefulWidget {
-  // final String imgname;
-  // final String name;
-  // final String description;
-  // final String star;
-  // final String date;
+  String? imgname;
+  String? name;
+  String? description;
+  String? star;
+  String? selectedDate;
 
   TheaterScreen({
     Key? key,
-    // required this.imgname,
-    // required this.name,
-    // required this.description,
-    // required this.star,
-    // required this.date,
+    this.imgname,
+    this.name,
+    this.description,
+    this.star,
+    this.selectedDate,
   }) : super(key: key);
 
   @override
@@ -25,8 +22,6 @@ class TheaterScreen extends StatefulWidget {
 
 class TheaterScreenState extends State<TheaterScreen> {
   List<String> selectedSeats = [];
-  int price=180;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +48,7 @@ class TheaterScreenState extends State<TheaterScreen> {
                 setState(() {
                   if (isSeatSelected) {
                     selectedSeats.remove(seatNumber.toString());
-                    price+=price;
+
                   } else {
                     selectedSeats.add(seatNumber.toString());
                   }
@@ -90,7 +85,7 @@ class TheaterScreenState extends State<TheaterScreen> {
                   // Handle the selected seats
                   print('Selected Seats: $selectedSeats');
                   Fluttertoast.showToast(
-                    msg: 'Seats booked: ${selectedSeats.join(', ')}${price}',
+                    msg: 'Seats booked: ${selectedSeats.join(', ')}',
                   );
                 },
                 child: Text('Book Selected Seats'),

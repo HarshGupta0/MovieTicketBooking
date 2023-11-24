@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movieticket/model/DateAndTimeModel.dart';
+import 'package:movieticket/view/select_seat.dart';
 
 class PaymentPage extends StatefulWidget {
   String? imgname;
@@ -43,7 +44,7 @@ class PaymentPageState extends State<PaymentPage> {
              children: <Widget>[
                // Price display
                Text(
-                 'Total Price: 180.00',
+                 'Total Price X 1: ₹180',
                  style: TextStyle(
                    color: Colors.white,
                    fontSize: 16,
@@ -53,6 +54,7 @@ class PaymentPageState extends State<PaymentPage> {
                ElevatedButton(
                  onPressed: () {
                    // Add your action when the "Proceed" button is pressed.
+                   Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>TheaterScreen()));
                  },
                  child: Text('Book Now'),
                  style: ElevatedButton.styleFrom(
