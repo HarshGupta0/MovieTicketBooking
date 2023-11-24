@@ -7,6 +7,9 @@ class BookingCardItem extends StatefulWidget {
   final String time;
   final String loction;
   final String date;
+  final String ?name;
+  final String desription;
+  final String ?star;
 
   BookingCardItem({
     Key? key, // Use Key as a parameter if you want to provide a key
@@ -14,6 +17,9 @@ class BookingCardItem extends StatefulWidget {
     required this.time,
     required this.loction,
     required this.date,
+    this.name,
+    this.star,
+    this.desription="",
   }) : super(key: key);
 
   @override
@@ -35,10 +41,10 @@ class _BookingCardItemState extends State<BookingCardItem> {
               colors: [Colors.green.shade600, Colors.black26])),
       child: OutlinedButton(
           onPressed: () {
-            // Navigator.pushNamed(context, '/PaymentPage',
-            //     arguments: Dateandtime(
-            //         widget.date, widget.time, widget.loction,widget.imgname));
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>TheaterScreen()));
+            Navigator.pushNamed(context, '/PaymentPage',
+                arguments: Dateandtime(
+                    widget.date, widget.time, widget.loction,widget.imgname,));
+            // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>TheaterScreen(imgname: widget.imgname, name:widget.name.toString(), description:widget.desription, star: widget.star.toString(), date:widget.date,)));
           },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

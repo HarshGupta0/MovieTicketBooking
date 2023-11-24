@@ -41,7 +41,7 @@ class _EnlargeState extends State<Enlarge> {
                 children: [
                   Container(
                     width: double.infinity,
-                    height: MediaQuery.of(context).size.height / 2,
+                    height: MediaQuery.of(context).size.height / 2*.9,
                     child: ClipRRect(
                       child: Image.asset(
                         widget.imgname,
@@ -49,7 +49,7 @@ class _EnlargeState extends State<Enlarge> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 5),
                   Center(
                     child: Text(
                       " About Movie :",
@@ -62,7 +62,7 @@ class _EnlargeState extends State<Enlarge> {
                           letterSpacing: 2),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 5),
                   Center(
                     child: Text(
                       widget.name,
@@ -75,7 +75,7 @@ class _EnlargeState extends State<Enlarge> {
                           letterSpacing: 2),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height:5),
                   Center(
                     child: Text(
                       widget.description,
@@ -88,7 +88,7 @@ class _EnlargeState extends State<Enlarge> {
                           letterSpacing: 2),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height:5),
                   Center(
                     child: Text(
                       widget.date,
@@ -101,7 +101,7 @@ class _EnlargeState extends State<Enlarge> {
                           letterSpacing: 2),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height:5),
                   Center(child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

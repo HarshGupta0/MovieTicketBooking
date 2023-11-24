@@ -1,15 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import '../model/DateAndTimeModel.dart';
+
 class TheaterScreen extends StatefulWidget {
-  const TheaterScreen({Key? key}) : super(key: key);
+  // final String imgname;
+  // final String name;
+  // final String description;
+  // final String star;
+  // final String date;
+
+  TheaterScreen({
+    Key? key,
+    // required this.imgname,
+    // required this.name,
+    // required this.description,
+    // required this.star,
+    // required this.date,
+  }) : super(key: key);
 
   @override
-  _TheaterScreenState createState() => _TheaterScreenState();
+  State<TheaterScreen> createState() =>TheaterScreenState();
 }
 
-class _TheaterScreenState extends State<TheaterScreen> {
+class TheaterScreenState extends State<TheaterScreen> {
   List<String> selectedSeats = [];
+  int price=180;
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +53,7 @@ class _TheaterScreenState extends State<TheaterScreen> {
                 setState(() {
                   if (isSeatSelected) {
                     selectedSeats.remove(seatNumber.toString());
+                    price+=price;
                   } else {
                     selectedSeats.add(seatNumber.toString());
                   }
@@ -62,6 +79,7 @@ class _TheaterScreenState extends State<TheaterScreen> {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
+        color: Colors.green.shade200,
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 8.0),
           child: Row(
@@ -72,10 +90,15 @@ class _TheaterScreenState extends State<TheaterScreen> {
                   // Handle the selected seats
                   print('Selected Seats: $selectedSeats');
                   Fluttertoast.showToast(
-                      msg: 'Seats booked: ${selectedSeats.join(', ')}');
+                    msg: 'Seats booked: ${selectedSeats.join(', ')}${price}',
+                  );
                 },
                 child: Text('Book Selected Seats'),
+                style: ElevatedButton.styleFrom(
+                  primary: Color(0xff618264).withOpacity(.9),
+                ),
               ),
+
             ],
           ),
         ),
